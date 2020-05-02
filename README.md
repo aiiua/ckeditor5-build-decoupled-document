@@ -5,7 +5,7 @@ CKEditor 5 document editor build
 
 <p align=center>The package was moved to the <a href="https://github.com/ckeditor/ckeditor5/tree/master/packages">main repository</a>.</p>
 
-[![npm version](https://badge.fury.io/js/%40ckeditor%2Fckeditor5-build-decoupled-document.svg)](https://www.npmjs.com/package/@ckeditor/ckeditor5-build-decoupled-document)
+[![npm version](https://badge.fury.io/js/%40ckeditor%2Fckeditor5-build-decoupled-document.svg)](https://www.npmjs.com/package/@addax/ckeditor5-build-decoupled-document)
 [![Dependency Status](https://david-dm.org/ckeditor/ckeditor5-build-decoupled-document/status.svg)](https://david-dm.org/ckeditor/ckeditor5-build-decoupled-document)
 [![devDependency Status](https://david-dm.org/ckeditor/ckeditor5-build-decoupled-document/dev-status.svg)](https://david-dm.org/ckeditor/ckeditor5-build-decoupled-document?type=dev)
 
@@ -31,7 +31,7 @@ See:
 First, install the build from npm:
 
 ```bash
-npm install --save @ckeditor/ckeditor5-build-decoupled-document
+npm install --save @addax/ckeditor5-build-decoupled-document
 ```
 
 And use it in your website:
@@ -41,7 +41,7 @@ And use it in your website:
 <div id="editor">
 	<p>This is the editor content.</p>
 </div>
-<script src="./node_modules/@ckeditor/ckeditor5-build-decoupled-document/build/ckeditor.js"></script>
+<script src="./node_modules/@addax/ckeditor5-build-decoupled-document/build/ckeditor.js"></script>
 <script>
 	DecoupledEditor
 		.create( document.querySelector( '#editor' ) )
@@ -60,10 +60,10 @@ And use it in your website:
 Or in your JavaScript application:
 
 ```js
-import DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
+import DecoupledEditor from '@addax/ckeditor5-build-decoupled-document';
 
 // Or using the CommonJS version:
-// const DecoupledEditor = require( '@ckeditor/ckeditor5-build-decoupled-document' );
+// const DecoupledEditor = require( '@addax/ckeditor5-build-decoupled-document' );
 
 DecoupledEditor
 	.create( document.querySelector( '#editor' ) )
