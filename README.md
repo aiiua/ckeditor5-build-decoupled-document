@@ -79,3 +79,7 @@ DecoupledEditor
 ## License
 
 Licensed under the terms of [GNU General Public License Version 2 or later](http://www.gnu.org/licenses/gpl.html). For full details about the license, please check the `LICENSE.md` file or [https://ckeditor.com/legal/ckeditor-oss-license](https://ckeditor.com/legal/ckeditor-oss-license).
+
+## Important note
+
+This project fork from `ckeditor5-build-decoupled-document`, because there are too few official plug-ins available, so fork, test use only! other problems can contact to delete this project.
