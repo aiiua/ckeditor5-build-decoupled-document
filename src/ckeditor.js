@@ -20,7 +20,6 @@ import Strikethrough from '@ckeditor/ckeditor5-basic-styles/src/strikethrough';
 import Underline from '@ckeditor/ckeditor5-basic-styles/src/underline';
 import BlockQuote from '@ckeditor/ckeditor5-block-quote/src/blockquote';
 import CKFinder from '@ckeditor/ckeditor5-ckfinder/src/ckfinder';
-import EasyImage from '@ckeditor/ckeditor5-easy-image/src/easyimage';
 import Heading from '@ckeditor/ckeditor5-heading/src/heading';
 import Image from '@ckeditor/ckeditor5-image/src/image';
 import ImageCaption from '@ckeditor/ckeditor5-image/src/imagecaption';
@@ -37,6 +36,29 @@ import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefrom
 import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation';
+import CKFinderUploadAdapter from '@ckeditor/ckeditor5-adapter-ckfinder/src/uploadadapter.js';
+import Highlight from '@ckeditor/ckeditor5-highlight/src/highlight.js';
+import TodoList from '@ckeditor/ckeditor5-list/src/todolist';
+import Autosave from '@ckeditor/ckeditor5-autosave/src/autosave.js';
+import CodeBlock from '@ckeditor/ckeditor5-code-block/src/codeblock.js';
+import Code from '@ckeditor/ckeditor5-basic-styles/src/code.js';
+import HorizontalLine from '@ckeditor/ckeditor5-horizontal-line/src/horizontalline.js';
+import ImageResize from '@ckeditor/ckeditor5-image/src/imageresize.js';
+import MediaEmbedToolbar from '@ckeditor/ckeditor5-media-embed/src/mediaembedtoolbar.js';
+import PageBreak from '@ckeditor/ckeditor5-page-break/src/pagebreak.js';
+import RemoveFormat from '@ckeditor/ckeditor5-remove-format/src/removeformat.js';
+import SpecialCharactersEssentials from '@ckeditor/ckeditor5-special-characters/src/specialcharactersessentials.js';
+import SpecialCharacters from '@ckeditor/ckeditor5-special-characters/src/specialcharacters.js';
+import SpecialCharactersArrows from '@ckeditor/ckeditor5-special-characters/src/specialcharactersarrows.js';
+import SpecialCharactersCurrency from '@ckeditor/ckeditor5-special-characters/src/specialcharacterscurrency.js';
+import SpecialCharactersLatin from '@ckeditor/ckeditor5-special-characters/src/specialcharacterslatin.js';
+import SpecialCharactersMathematical from '@ckeditor/ckeditor5-special-characters/src/specialcharactersmathematical.js';
+import SpecialCharactersText from '@ckeditor/ckeditor5-special-characters/src/specialcharacterstext.js';
+import TableCellProperties from '@ckeditor/ckeditor5-table/src/tablecellproperties';
+import Subscript from '@ckeditor/ckeditor5-basic-styles/src/subscript.js';
+import Superscript from '@ckeditor/ckeditor5-basic-styles/src/superscript.js';
+import TableProperties from '@ckeditor/ckeditor5-table/src/tableproperties';
+import WordCount from '@ckeditor/ckeditor5-word-count/src/wordcount.js';
 
 export default class DecoupledEditor extends DecoupledEditorBase {}
 
@@ -56,7 +78,6 @@ DecoupledEditor.builtinPlugins = [
 	Underline,
 	BlockQuote,
 	CKFinder,
-	EasyImage,
 	Heading,
 	Image,
 	ImageCaption,
@@ -72,26 +93,60 @@ DecoupledEditor.builtinPlugins = [
 	PasteFromOffice,
 	Table,
 	TableToolbar,
-	TextTransformation
+	TextTransformation,
+	CKFinderUploadAdapter,
+	Highlight,
+	TodoList,
+	Autosave,
+	CodeBlock,
+	Code,
+	HorizontalLine,
+	ImageResize,
+	MediaEmbedToolbar,
+	PageBreak,
+	RemoveFormat,
+	SpecialCharactersEssentials,
+	SpecialCharacters,
+	SpecialCharactersArrows,
+	SpecialCharactersCurrency,
+	SpecialCharactersLatin,
+	SpecialCharactersMathematical,
+	SpecialCharactersText,
+	TableCellProperties,
+	Subscript,
+	Superscript,
+	TableProperties,
+	WordCount
 ];
 
 // Editor configuration.
 DecoupledEditor.defaultConfig = {
 	toolbar: {
 		items: [
+			'CKFinder',
+			'|',
 			'heading',
 			'|',
-			'fontfamily',
-			'fontsize',
-			'fontColor',
+			'fontFamily',
+			'fontSize',
 			'fontBackgroundColor',
+			'fontColor',
 			'|',
 			'bold',
 			'italic',
 			'underline',
 			'strikethrough',
+			'highlight',
 			'|',
 			'alignment',
+			'|',
+			'removeFormat',
+			'subscript',
+			'superscript',
+			'specialCharacters',
+			'|',
+			'pageBreak',
+			'horizontalLine',
 			'|',
 			'numberedList',
 			'bulletedList',
@@ -99,37 +154,35 @@ DecoupledEditor.defaultConfig = {
 			'indent',
 			'outdent',
 			'|',
+			'todoList',
 			'link',
-			'blockquote',
+			'blockQuote',
 			'imageUpload',
 			'insertTable',
 			'mediaEmbed',
+			'|',
+			'code',
+			'codeBlock',
 			'|',
 			'undo',
 			'redo'
 		]
 	},
+	language: 'zh-cn',
 	image: {
-		styles: [
-			'full',
-			'alignLeft',
-			'alignRight'
-		],
 		toolbar: [
-			'imageStyle:alignLeft',
+			'imageTextAlternative',
 			'imageStyle:full',
-			'imageStyle:alignRight',
-			'|',
-			'imageTextAlternative'
+			'imageStyle:side'
 		]
 	},
 	table: {
 		contentToolbar: [
 			'tableColumn',
 			'tableRow',
-			'mergeTableCells'
+			'mergeTableCells',
+			'tableCellProperties',
+			'tableProperties'
 		]
-	},
-	// This value must be kept in sync with the language defined in webpack.config.js.
-	language: 'en'
+	}
 };
