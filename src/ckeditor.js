@@ -168,7 +168,7 @@ DecoupledEditor.defaultConfig = {
 			'redo'
 		]
 	},
-	language: 'zh-cn',
+	language: 'en',
 	image: {
 		toolbar: [
 			'imageTextAlternative',
